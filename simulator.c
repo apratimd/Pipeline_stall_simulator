@@ -1,9 +1,3 @@
-// pipeline_sim.c  — minimal tolerant parser for Notepad files
-// 5-stage pipeline (IF, ID, EX, MEM, WB), ALU-only, NO FORWARDING.
-// RAW stalls: i-1 => +2, i-2 => +1 (max).
-// Build: gcc -std=c99 -O2 pipeline_sim.c -o pipeline_sim
-// Run:   ./pipeline_sim [instructions.txt] [pipeline_timeline.csv]
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
