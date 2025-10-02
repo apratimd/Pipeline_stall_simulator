@@ -16,4 +16,3 @@ Computes the execution timeline (cycle numbers for IF/ID/EX/MEM/WB for each inst
 
 Outputs the result as both console statistics (total stalls, total cycles) and a CSV file (pipeline_timeline.csv) for detailed analysis.
 
-Includes a manually annotated instruction file (instructions_with_analysis.txt) to cross-check the simulator’s results.
