@@ -1,0 +1,133 @@
+cycle,IF,ID,EX,MEM,WB,stalls_pending
+1,"add x1, x2, x3",,,,,0
+2,"sub x4, x5, x6","add x1, x2, x3",,,,0
+3,"mov x7, x8","sub x4, x5, x6","add x1, x2, x3",,,0
+4,"add x9, x10, x11","mov x7, x8","sub x4, x5, x6","add x1, x2, x3",,0
+5,"mov x12, x9","add x9, x10, x11","mov x7, x8","sub x4, x5, x6","add x1, x2, x3",0
+6,"add x1, x1, x4","mov x12, x9","add x9, x10, x11","mov x7, x8","sub x4, x5, x6",2
+7,"add x1, x1, x4","mov x12, x9",,"add x9, x10, x11","mov x7, x8",1
+8,"add x1, x1, x4","mov x12, x9",,,"add x9, x10, x11",0
+9,"sub x1, x1, x7","add x1, x1, x4","mov x12, x9",,,0
+10,"add x1, x1, x12","sub x1, x1, x7","add x1, x1, x4","mov x12, x9",,2
+11,"add x1, x1, x12","sub x1, x1, x7",,"add x1, x1, x4","mov x12, x9",1
+12,"add x1, x1, x12","sub x1, x1, x7",,,"add x1, x1, x4",0
+13,"mov x2, x1","add x1, x1, x12","sub x1, x1, x7",,,2
+14,"mov x2, x1","add x1, x1, x12",,"sub x1, x1, x7",,1
+15,"mov x2, x1","add x1, x1, x12",,,"sub x1, x1, x7",0
+16,"add x3, x2, x1","mov x2, x1","add x1, x1, x12",,,2
+17,"add x3, x2, x1","mov x2, x1",,"add x1, x1, x12",,1
+18,"add x3, x2, x1","mov x2, x1",,,"add x1, x1, x12",0
+19,"sub x4, x3, x2","add x3, x2, x1","mov x2, x1",,,2
+20,"sub x4, x3, x2","add x3, x2, x1",,"mov x2, x1",,1
+21,"sub x4, x3, x2","add x3, x2, x1",,,"mov x2, x1",0
+22,"mov x5, x4","sub x4, x3, x2","add x3, x2, x1",,,2
+23,"mov x5, x4","sub x4, x3, x2",,"add x3, x2, x1",,1
+24,"mov x5, x4","sub x4, x3, x2",,,"add x3, x2, x1",0
+25,"add x6, x5, x3","mov x5, x4","sub x4, x3, x2",,,2
+26,"add x6, x5, x3","mov x5, x4",,"sub x4, x3, x2",,1
+27,"add x6, x5, x3","mov x5, x4",,,"sub x4, x3, x2",0
+28,"sub x7, x6, x5","add x6, x5, x3","mov x5, x4",,,2
+29,"sub x7, x6, x5","add x6, x5, x3",,"mov x5, x4",,1
+30,"sub x7, x6, x5","add x6, x5, x3",,,"mov x5, x4",0
+31,"mov x8, x7","sub x7, x6, x5","add x6, x5, x3",,,2
+32,"mov x8, x7","sub x7, x6, x5",,"add x6, x5, x3",,1
+33,"mov x8, x7","sub x7, x6, x5",,,"add x6, x5, x3",0
+34,"add x9, x9, x1","mov x8, x7","sub x7, x6, x5",,,2
+35,"add x9, x9, x1","mov x8, x7",,"sub x7, x6, x5",,1
+36,"add x9, x9, x1","mov x8, x7",,,"sub x7, x6, x5",0
+37,"sub x9, x9, x2","add x9, x9, x1","mov x8, x7",,,0
+38,"mov x10, x9","sub x9, x9, x2","add x9, x9, x1","mov x8, x7",,2
+39,"mov x10, x9","sub x9, x9, x2",,"add x9, x9, x1","mov x8, x7",1
+40,"mov x10, x9","sub x9, x9, x2",,,"add x9, x9, x1",0
+41,"add x11, x10, x9","mov x10, x9","sub x9, x9, x2",,,2
+42,"add x11, x10, x9","mov x10, x9",,"sub x9, x9, x2",,1
+43,"add x11, x10, x9","mov x10, x9",,,"sub x9, x9, x2",0
+44,"sub x12, x11, x10","add x11, x10, x9","mov x10, x9",,,2
+45,"sub x12, x11, x10","add x11, x10, x9",,"mov x10, x9",,1
+46,"sub x12, x11, x10","add x11, x10, x9",,,"mov x10, x9",0
+47,"add x2, x12, x11","sub x12, x11, x10","add x11, x10, x9",,,2
+48,"add x2, x12, x11","sub x12, x11, x10",,"add x11, x10, x9",,1
+49,"add x2, x12, x11","sub x12, x11, x10",,,"add x11, x10, x9",0
+50,"sub x3, x2, x12","add x2, x12, x11","sub x12, x11, x10",,,2
+51,"sub x3, x2, x12","add x2, x12, x11",,"sub x12, x11, x10",,1
+52,"sub x3, x2, x12","add x2, x12, x11",,,"sub x12, x11, x10",0
+53,"mov x4, x3","sub x3, x2, x12","add x2, x12, x11",,,2
+54,"mov x4, x3","sub x3, x2, x12",,"add x2, x12, x11",,1
+55,"mov x4, x3","sub x3, x2, x12",,,"add x2, x12, x11",0
+56,"add x5, x4, x2","mov x4, x3","sub x3, x2, x12",,,2
+57,"add x5, x4, x2","mov x4, x3",,"sub x3, x2, x12",,1
+58,"add x5, x4, x2","mov x4, x3",,,"sub x3, x2, x12",0
+59,"sub x6, x5, x4","add x5, x4, x2","mov x4, x3",,,2
+60,"sub x6, x5, x4","add x5, x4, x2",,"mov x4, x3",,1
+61,"sub x6, x5, x4","add x5, x4, x2",,,"mov x4, x3",0
+62,"mov x7, x6","sub x6, x5, x4","add x5, x4, x2",,,2
+63,"mov x7, x6","sub x6, x5, x4",,"add x5, x4, x2",,1
+64,"mov x7, x6","sub x6, x5, x4",,,"add x5, x4, x2",0
+65,"add x8, x2, x3","mov x7, x6","sub x6, x5, x4",,,2
+66,"add x8, x2, x3","mov x7, x6",,"sub x6, x5, x4",,1
+67,"add x8, x2, x3","mov x7, x6",,,"sub x6, x5, x4",0
+68,"sub x9, x4, x5","add x8, x2, x3","mov x7, x6",,,0
+69,"mov x10, x6","sub x9, x4, x5","add x8, x2, x3","mov x7, x6",,0
+70,"add x11, x7, x8","mov x10, x6","sub x9, x4, x5","add x8, x2, x3","mov x7, x6",0
+71,"sub x12, x9, x10","add x11, x7, x8","mov x10, x6","sub x9, x4, x5","add x8, x2, x3",0
+72,"add x1, x2, x3","sub x12, x9, x10","add x11, x7, x8","mov x10, x6","sub x9, x4, x5",1
+73,"add x1, x2, x3","sub x12, x9, x10",,"add x11, x7, x8","mov x10, x6",0
+74,"add x4, x1, x5","add x1, x2, x3","sub x12, x9, x10",,"add x11, x7, x8",0
+75,"add x6, x4, x1","add x4, x1, x5","add x1, x2, x3","sub x12, x9, x10",,2
+76,"add x6, x4, x1","add x4, x1, x5",,"add x1, x2, x3","sub x12, x9, x10",1
+77,"add x6, x4, x1","add x4, x1, x5",,,"add x1, x2, x3",0
+78,"mov x7, x6","add x6, x4, x1","add x4, x1, x5",,,2
+79,"mov x7, x6","add x6, x4, x1",,"add x4, x1, x5",,1
+80,"mov x7, x6","add x6, x4, x1",,,"add x4, x1, x5",0
+81,"sub x8, x7, x6","mov x7, x6","add x6, x4, x1",,,2
+82,"sub x8, x7, x6","mov x7, x6",,"add x6, x4, x1",,1
+83,"sub x8, x7, x6","mov x7, x6",,,"add x6, x4, x1",0
+84,"mov x9, x8","sub x8, x7, x6","mov x7, x6",,,2
+85,"mov x9, x8","sub x8, x7, x6",,"mov x7, x6",,1
+86,"mov x9, x8","sub x8, x7, x6",,,"mov x7, x6",0
+87,"add x10, x9, x7","mov x9, x8","sub x8, x7, x6",,,2
+88,"add x10, x9, x7","mov x9, x8",,"sub x8, x7, x6",,1
+89,"add x10, x9, x7","mov x9, x8",,,"sub x8, x7, x6",0
+90,"sub x11, x10, x9","add x10, x9, x7","mov x9, x8",,,2
+91,"sub x11, x10, x9","add x10, x9, x7",,"mov x9, x8",,1
+92,"sub x11, x10, x9","add x10, x9, x7",,,"mov x9, x8",0
+93,"mov x12, x11","sub x11, x10, x9","add x10, x9, x7",,,2
+94,"mov x12, x11","sub x11, x10, x9",,"add x10, x9, x7",,1
+95,"mov x12, x11","sub x11, x10, x9",,,"add x10, x9, x7",0
+96,"add x1, x12, x10","mov x12, x11","sub x11, x10, x9",,,2
+97,"add x1, x12, x10","mov x12, x11",,"sub x11, x10, x9",,1
+98,"add x1, x12, x10","mov x12, x11",,,"sub x11, x10, x9",0
+99,"sub x2, x1, x12","add x1, x12, x10","mov x12, x11",,,2
+100,"sub x2, x1, x12","add x1, x12, x10",,"mov x12, x11",,1
+101,"sub x2, x1, x12","add x1, x12, x10",,,"mov x12, x11",0
+102,"mov x3, x2","sub x2, x1, x12","add x1, x12, x10",,,2
+103,"mov x3, x2","sub x2, x1, x12",,"add x1, x12, x10",,1
+104,"mov x3, x2","sub x2, x1, x12",,,"add x1, x12, x10",0
+105,"add x4, x3, x1","mov x3, x2","sub x2, x1, x12",,,2
+106,"add x4, x3, x1","mov x3, x2",,"sub x2, x1, x12",,1
+107,"add x4, x3, x1","mov x3, x2",,,"sub x2, x1, x12",0
+108,"sub x5, x4, x3","add x4, x3, x1","mov x3, x2",,,2
+109,"sub x5, x4, x3","add x4, x3, x1",,"mov x3, x2",,1
+110,"sub x5, x4, x3","add x4, x3, x1",,,"mov x3, x2",0
+111,"mov x6, x5","sub x5, x4, x3","add x4, x3, x1",,,2
+112,"mov x6, x5","sub x5, x4, x3",,"add x4, x3, x1",,1
+113,"mov x6, x5","sub x5, x4, x3",,,"add x4, x3, x1",0
+114,"add x7, x6, x2","mov x6, x5","sub x5, x4, x3",,,2
+115,"add x7, x6, x2","mov x6, x5",,"sub x5, x4, x3",,1
+116,"add x7, x6, x2","mov x6, x5",,,"sub x5, x4, x3",0
+117,"sub x8, x7, x6","add x7, x6, x2","mov x6, x5",,,2
+118,"sub x8, x7, x6","add x7, x6, x2",,"mov x6, x5",,1
+119,"sub x8, x7, x6","add x7, x6, x2",,,"mov x6, x5",0
+120,"mov x9, x8","sub x8, x7, x6","add x7, x6, x2",,,2
+121,"mov x9, x8","sub x8, x7, x6",,"add x7, x6, x2",,1
+122,"mov x9, x8","sub x8, x7, x6",,,"add x7, x6, x2",0
+123,"add x10, x9, x4","mov x9, x8","sub x8, x7, x6",,,2
+124,"add x10, x9, x4","mov x9, x8",,"sub x8, x7, x6",,1
+125,"add x10, x9, x4","mov x9, x8",,,"sub x8, x7, x6",0
+126,,"add x10, x9, x4","mov x9, x8",,,2
+127,,"add x10, x9, x4",,"mov x9, x8",,1
+128,,"add x10, x9, x4",,,"mov x9, x8",0
+129,,,"add x10, x9, x4",,,0
+130,,,,"add x10, x9, x4",,0
+131,,,,,"add x10, x9, x4",0
+132,,,,,,0
