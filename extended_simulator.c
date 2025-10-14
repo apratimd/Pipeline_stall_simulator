@@ -1,8 +1,3 @@
-/* pipeline_sim_csv.c  // file header: name of file and brief purpose
-   Cycle-by-cycle 5-stage pipeline simulator (no forwarding).  // short description
-   Writes a per-cycle CSV: pipeline_cycles.csv  // output produced by program
-*/
-
 #include <stdio.h>   // include stdio for file I/O and printf
 #include <stdlib.h>  // include stdlib for malloc/free and exit codes
 #include <string.h>  // include string.h for strncpy, strcmp, strlen, etc.
